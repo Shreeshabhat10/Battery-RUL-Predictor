@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Battery RUL Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Battery RUL Predictor</h2>
+        <form action="/predict" method="post">
+            <label for="temperature">Temperature:</label>
+            <input type="number" step="any" name="temperature" id="temperature" required>
+            
+            <label for="voltage_measured">Voltage Load:</label>
+            <input type="number" step="any" name="voltage_measured" id="voltage_measured" required>
+            
+            <label for="voltage_load">Voltage Discharge:</label>
+            <input type="number" step="any" name="voltage_load" id="voltage_load" required>
+            
+            <button type="submit" class="btn">Predict RUL</button>
+        </form>
+    </div>
+</body>
+</html>
